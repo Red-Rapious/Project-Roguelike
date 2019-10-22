@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scenes/SoundPlayers/WeaponSound.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Sound/Effects/Player/Attack1.ogg" type="AudioStream" id=2]
+
+[node name="WeaponSound" type="Node"]
+script = ExtResource( 1 )
+
+[node name="NoTouch" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 2 )
+volume_db = -30.0

@@ -1,0 +1,58 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Scenes/Characters/Character.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Characters/Players/PlayerClassic.gd" type="Script" id=2]
+[ext_resource path="res://Assets/VFX/Critical!.png" type="Texture" id=3]
+[ext_resource path="res://Scenes/SoundPlayers/PlayerSound.tscn" type="PackedScene" id=4]
+
+[sub_resource type="Animation" id=1]
+resource_name = "Critical"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath("Critical:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.39 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+
+[node name="PlayerClassic" index="0" groups=[
+"player",
+] instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+pvMax = 50
+
+[node name="Sprite" parent="." index="1"]
+frame = 8
+
+[node name="Camera2D" type="Camera2D" parent="." index="2"]
+position = Vector2( 10, 10 )
+current = true
+zoom = Vector2( 0.7, 0.7 )
+
+[node name="Critical" type="Sprite" parent="." index="4"]
+visible = false
+position = Vector2( 10.0412, 4.90735 )
+scale = Vector2( 0.122909, 0.156376 )
+texture = ExtResource( 3 )
+
+[node name="CriticalPlayer" type="AnimationPlayer" parent="." index="5"]
+anims/Critical = SubResource( 1 )
+
+[node name="ArmorRecover" type="Timer" parent="." index="6"]
+wait_time = 2.0
+one_shot = true
+autostart = true
+
+[node name="PlayerSound" parent="." index="7" instance=ExtResource( 4 )]
+[connection signal="armor_broken" from="." to="PlayerSound" method="_on_PlayerClassic_armor_broken"]
+[connection signal="armor_recover" from="." to="PlayerSound" method="_on_PlayerClassic_armor_recover"]
+[connection signal="attack" from="." to="PlayerSound" method="_on_PlayerClassic_attack"]
+[connection signal="critical" from="." to="PlayerSound" method="_on_PlayerClassic_critical"]
+[connection signal="get_new_weapon" from="." to="PlayerSound" method="_on_PlayerClassic_get_new_weapon"]
+[connection signal="switch_weapon" from="." to="PlayerSound" method="_on_PlayerClassic_switch_weapon"]

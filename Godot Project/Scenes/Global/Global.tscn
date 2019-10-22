@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Scenes/Global/Global.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Sound/Music/Theme.ogg" type="AudioStream" id=2]
+[ext_resource path="res://Assets/Sound/Music/InGame.ogg" type="AudioStream" id=3]
+[ext_resource path="res://Assets/Sound/Music/Boss.ogg" type="AudioStream" id=4]
+[ext_resource path="res://Assets/Sound/Music/Dead.ogg" type="AudioStream" id=5]
+
+[node name="Global" type="Node"]
+pause_mode = 2
+script = ExtResource( 1 )
+
+[node name="Theme" type="AudioStreamPlayer" parent="." groups=[
+"music",
+]]
+stream = ExtResource( 2 )
+autoplay = true
+
+[node name="InGame" type="AudioStreamPlayer" parent="." groups=[
+"music",
+]]
+stream = ExtResource( 3 )
+volume_db = -15.146
+
+[node name="Boss" type="AudioStreamPlayer" parent="." groups=[
+"music",
+]]
+stream = ExtResource( 4 )
+
+[node name="EndLevel" type="AudioStreamPlayer" parent="." groups=[
+"sound",
+]]
+
+[node name="Dead" type="AudioStreamPlayer" parent="." groups=[
+"sound",
+]]
+stream = ExtResource( 5 )

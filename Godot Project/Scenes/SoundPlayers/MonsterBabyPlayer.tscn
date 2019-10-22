@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scenes/SoundPlayers/MonsterBabyPlayer.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Sound/Effects/Monsters/grunt1.wav" type="AudioStream" id=2]
+[ext_resource path="res://Assets/Sound/Effects/Monsters/grunt2.wav" type="AudioStream" id=3]
+[ext_resource path="res://Assets/Sound/Effects/Monsters/paind.wav" type="AudioStream" id=4]
+
+[node name="MonsterBabyPlayer" type="Node"]
+script = ExtResource( 1 )
+
+[node name="Attack1" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 2 )
+volume_db = -2.0
+
+[node name="Attack2" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 3 )
+volume_db = -2.0
+
+[node name="Attack3" type="AudioStreamPlayer2D" parent="."]
+
+[node name="HitBaby" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 4 )
+volume_db = -2.0

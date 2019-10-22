@@ -1,0 +1,179 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Themes/UITheme.tres" type="Theme" id=1]
+[ext_resource path="res://Scenes/UI/Menus/PauseMenu.gd" type="Script" id=2]
+[ext_resource path="res://Scenes/UI/Menus/Buttons/TitleButtons/Quit.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/UI/Menus/Buttons/TitleButtons/Options.tscn" type="PackedScene" id=4]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.172549, 0.113725, 0.172549, 1 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.227451, 0.14902, 0.227451, 1 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.227451, 0.14902, 0.227451, 1 )
+
+[node name="Pause" type="CanvasLayer"]
+
+[node name="Popup" type="Popup" parent="."]
+pause_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 15.0
+margin_top = 15.0
+margin_right = -15.0
+margin_bottom = -15.0
+theme = ExtResource( 1 )
+script = ExtResource( 2 )
+
+[node name="PanelO" type="Panel" parent="Popup"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 1 )
+
+[node name="PanelI" type="Panel" parent="Popup"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 5.0
+margin_top = 5.0
+margin_right = -5.0
+margin_bottom = -5.0
+
+[node name="All" type="VBoxContainer" parent="Popup"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = 20.0
+margin_right = -10.0
+margin_bottom = -20.0
+
+[node name="Top" type="HBoxContainer" parent="Popup/All"]
+editor/display_folded = true
+margin_right = 490.0
+margin_bottom = 111.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Weapons" type="VBoxContainer" parent="Popup/All/Top"]
+editor/display_folded = true
+margin_right = 243.0
+margin_bottom = 111.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Name1" type="Label" parent="Popup/All/Top/Weapons"]
+margin_right = 243.0
+margin_bottom = 14.0
+text = "Weapon1"
+
+[node name="Texture1" type="Panel" parent="Popup/All/Top/Weapons"]
+margin_top = 18.0
+margin_right = 243.0
+margin_bottom = 18.0
+
+[node name="Name2" type="Label" parent="Popup/All/Top/Weapons"]
+margin_top = 22.0
+margin_right = 243.0
+margin_bottom = 36.0
+text = "Weapon2"
+
+[node name="Texture2" type="Panel" parent="Popup/All/Top/Weapons"]
+margin_top = 40.0
+margin_right = 243.0
+margin_bottom = 40.0
+
+[node name="PlayerStuff" type="HBoxContainer" parent="Popup/All/Top"]
+editor/display_folded = true
+margin_left = 247.0
+margin_right = 490.0
+margin_bottom = 111.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Equipement" type="VBoxContainer" parent="Popup/All/Top/PlayerStuff"]
+editor/display_folded = true
+margin_left = 85.0
+margin_right = 119.0
+margin_bottom = 111.0
+rect_min_size = Vector2( 34, 0 )
+size_flags_horizontal = 10
+
+[node name="Armor" type="Panel" parent="Popup/All/Top/PlayerStuff/Equipement"]
+margin_right = 34.0
+margin_bottom = 34.0
+size_flags_vertical = 3
+custom_styles/panel = SubResource( 2 )
+
+[node name="Gloves" type="Panel" parent="Popup/All/Top/PlayerStuff/Equipement"]
+margin_top = 38.0
+margin_right = 34.0
+margin_bottom = 72.0
+size_flags_vertical = 3
+custom_styles/panel = SubResource( 2 )
+
+[node name="Boots" type="Panel" parent="Popup/All/Top/PlayerStuff/Equipement"]
+margin_top = 76.0
+margin_right = 34.0
+margin_bottom = 111.0
+size_flags_vertical = 3
+custom_styles/panel = SubResource( 2 )
+
+[node name="PlayerImage" type="Panel" parent="Popup/All/Top/PlayerStuff"]
+margin_left = 132.0
+margin_right = 243.0
+margin_bottom = 111.0
+rect_min_size = Vector2( 111, 111 )
+size_flags_horizontal = 10
+custom_styles/panel = SubResource( 3 )
+
+[node name="Slots" type="HBoxContainer" parent="Popup/All"]
+margin_top = 115.0
+margin_right = 490.0
+margin_bottom = 206.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="All" type="HBoxContainer" parent="Popup/All/Slots"]
+margin_right = 490.0
+margin_bottom = 91.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="SlotsLeft" type="HBoxContainer" parent="Popup/All/Slots/All"]
+margin_right = 239.0
+margin_bottom = 91.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VSeparator" type="VSeparator" parent="Popup/All/Slots/All"]
+margin_left = 243.0
+margin_right = 247.0
+margin_bottom = 91.0
+
+[node name="SlotsRight" type="HBoxContainer" parent="Popup/All/Slots/All"]
+margin_left = 251.0
+margin_right = 490.0
+margin_bottom = 91.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Buttons" type="HBoxContainer" parent="Popup/All"]
+margin_top = 210.0
+margin_right = 490.0
+margin_bottom = 230.0
+custom_constants/separation = 100
+
+[node name="Quit" parent="Popup/All/Buttons" instance=ExtResource( 3 )]
+margin_left = 0.0
+margin_right = 195.0
+size_flags_horizontal = 3
+text = "Quit game"
+
+[node name="Options" parent="Popup/All/Buttons" instance=ExtResource( 4 )]
+margin_left = 295.0
+margin_right = 490.0
+size_flags_horizontal = 3
+text = "Test Area"
+[connection signal="about_to_show" from="Popup" to="Popup" method="_on_PauseMenu_about_to_show"]
+[connection signal="popup_hide" from="Popup" to="Popup" method="_on_PauseMenu_popup_hide"]

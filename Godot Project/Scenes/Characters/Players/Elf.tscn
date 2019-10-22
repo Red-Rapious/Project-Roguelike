@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scenes/Characters/Players/PlayerClassic.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Characters/Players/Elf.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Characters/Players/Elf.png" type="Texture" id=3]
+
+
+[node name="Elf" index="0" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+weapon = "Sword"
+
+[node name="Sprite" parent="." index="1"]
+position = Vector2( 1, 6 )
+texture = ExtResource( 3 )

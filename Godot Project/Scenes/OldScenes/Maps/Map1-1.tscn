@@ -1,0 +1,144 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Scenes/OldScenes/Maps/MapClassic.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Objects/Torch/Torch.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Objects/Door/DoorV.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Objects/Door/DoorH.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Objects/WeaponStander.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Characters/Monsters/MonsterClassic.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/Characters/Monsters/Baby/BabyDevil.tscn" type="PackedScene" id=7]
+
+
+[node name="Map1-1" instance=ExtResource( 1 )]
+start_position = Vector2( 290, 48 )
+
+[node name="Torch" parent="." index="2" instance=ExtResource( 2 )]
+position = Vector2( 296.89, 17 )
+side = false
+right_side = false
+
+[node name="Torch2" parent="." index="3" instance=ExtResource( 2 )]
+position = Vector2( 264, 232 )
+side = false
+right_side = false
+
+[node name="Torch3" parent="." index="4" instance=ExtResource( 2 )]
+position = Vector2( 411.782, 344 )
+
+[node name="Torch4" parent="." index="5" instance=ExtResource( 2 )]
+position = Vector2( 566, 312.146 )
+right_side = false
+
+[node name="Torch5" parent="." index="6" instance=ExtResource( 2 )]
+position = Vector2( 744, 200 )
+right_side = false
+
+[node name="DoorV" parent="." index="7" instance=ExtResource( 3 )]
+position = Vector2( 424.114, 256 )
+collision_layer = 16
+collision_mask = 2
+
+[node name="DoorV2" parent="." index="8" instance=ExtResource( 3 )]
+position = Vector2( 552.114, 256 )
+collision_layer = 16
+collision_mask = 2
+
+[node name="DoorV3" parent="." index="9" instance=ExtResource( 3 )]
+position = Vector2( 680, 544.362 )
+collision_layer = 16
+collision_mask = 2
+
+[node name="DoorH" parent="." index="10" instance=ExtResource( 4 )]
+position = Vector2( 304, 184 )
+collision_layer = 16
+collision_mask = 2
+
+[node name="DoorH2" parent="." index="11" instance=ExtResource( 4 )]
+position = Vector2( 304, 360 )
+collision_layer = 16
+collision_mask = 2
+
+[node name="DoorH3" parent="." index="12" instance=ExtResource( 4 )]
+position = Vector2( 304, 440 )
+collision_layer = 16
+collision_mask = 2
+
+[node name="WeaponStander" parent="." index="13" instance=ExtResource( 5 )]
+position = Vector2( 888, 288 )
+weapon_name = "Sword"
+
+[node name="WeaponStander2" parent="." index="14" instance=ExtResource( 5 )]
+position = Vector2( 936, 288 )
+weapon_name = "Katana"
+price = 25
+
+[node name="WeaponStander3" parent="." index="15" instance=ExtResource( 5 )]
+position = Vector2( 992, 288 )
+weapon_name = "Hammer"
+price = 15
+
+[node name="MonsterClassic" parent="." index="16" instance=ExtResource( 6 )]
+position = Vector2( 222.252, 287.154 )
+collision_mask = 1
+
+[node name="MonsterClassic3" parent="." index="17" instance=ExtResource( 6 )]
+position = Vector2( 390.638, 284.963 )
+collision_mask = 1
+
+[node name="MonsterClassic4" parent="." index="18" instance=ExtResource( 6 )]
+position = Vector2( 688, 256 )
+collision_mask = 1
+
+[node name="MonsterClassic9" parent="." index="19" instance=ExtResource( 6 )]
+position = Vector2( 512, 464 )
+collision_mask = 1
+
+[node name="MonsterClassic14" parent="." index="20" instance=ExtResource( 6 )]
+position = Vector2( 621.275, 578.697 )
+collision_mask = 1
+
+[node name="MonsterClassic10" parent="." index="21" instance=ExtResource( 6 )]
+position = Vector2( 208, 480 )
+collision_mask = 1
+
+[node name="MonsterClassic11" parent="." index="22" instance=ExtResource( 6 )]
+position = Vector2( 528, 570.992 )
+collision_mask = 1
+
+[node name="MonsterClassic13" parent="." index="23" instance=ExtResource( 6 )]
+position = Vector2( 320, 562.191 )
+collision_mask = 1
+
+[node name="MonsterClassic5" parent="." index="24" instance=ExtResource( 6 )]
+position = Vector2( 614.638, 268.963 )
+collision_mask = 1
+
+[node name="BabyDevil" parent="." index="25" instance=ExtResource( 7 )]
+position = Vector2( 294.764, 287.154 )
+
+[node name="BabyDevil2" parent="." index="26" instance=ExtResource( 7 )]
+position = Vector2( 336, 313.926 )
+
+[node name="BabyDevil3" parent="." index="27" instance=ExtResource( 7 )]
+position = Vector2( 689, 316.623 )
+
+[node name="BabyDevil4" parent="." index="28" instance=ExtResource( 7 )]
+position = Vector2( 656, 316.117 )
+
+[node name="BabyDevil5" parent="." index="29" instance=ExtResource( 7 )]
+position = Vector2( 614.638, 316.117 )
+
+[node name="BabyDevil6" parent="." index="30" instance=ExtResource( 7 )]
+position = Vector2( 397.276, 482.697 )
+
+[node name="BabyDevil7" parent="." index="31" instance=ExtResource( 7 )]
+position = Vector2( 496, 512 )
+
+[node name="BabyDevil9" parent="." index="32" instance=ExtResource( 7 )]
+position = Vector2( 448, 591.154 )
+
+[node name="BabyDevil10" parent="." index="33" instance=ExtResource( 7 )]
+position = Vector2( 636.096, 482.697 )
+
+[node name="BabyDevil8" parent="." index="34" instance=ExtResource( 7 )]
+position = Vector2( 411.782, 618.183 )

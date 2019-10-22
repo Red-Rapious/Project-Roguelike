@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scenes/Weapons/WeaponClasssic.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Assets/Weapons/OldSword.png" type="Texture" id=2]
+
+[node name="OldSword" index="0" instance=ExtResource( 1 )]
+bump = 2
+
+[node name="Sprite" parent="Rotate" index="0"]
+position = Vector2( -3.65992, -10.8295 )
+scale = Vector2( 0.751631, 0.751631 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" parent="RightColl" index="0"]
+position = Vector2( 26.717, 21.0003 )
+
+[node name="CollisionShape2D" parent="LeftColl" index="0"]
+position = Vector2( -1.21732, 20.9386 )

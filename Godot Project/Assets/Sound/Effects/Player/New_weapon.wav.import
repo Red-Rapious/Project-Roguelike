@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/New_weapon.wav-20353d4027eac34d7a4b6e053e309425.sample"
+
+[deps]
+
+source_file="res://Assets/Sound/Effects/Player/New_weapon.wav"
+dest_files=[ "res://.import/New_weapon.wav-20353d4027eac34d7a4b6e053e309425.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

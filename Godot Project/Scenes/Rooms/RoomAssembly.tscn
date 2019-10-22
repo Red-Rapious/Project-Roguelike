@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scenes/Rooms/RoomAssembly.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/UI/HUD/HUD.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/UI/Menus/PauseMenu.tscn" type="PackedScene" id=3]
+
+[node name="RoomAssemblyClassic" type="Node2D"]
+script = ExtResource( 1 )
+start_position = Vector2( 128, 128 )
+
+[node name="RoomsContainer" type="Node2D" parent="."]
+
+[node name="HUD" parent="." instance=ExtResource( 2 )]
+
+[node name="Pause" parent="." instance=ExtResource( 3 )]
+editor/display_folded = true
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+visible = false
+color = Color( 0.705882, 0.705882, 0.705882, 1 )
+[connection signal="about_to_show" from="Pause/Popup" to="." method="_on_Popup_about_to_show"]
+[connection signal="popup_hide" from="Pause/Popup" to="." method="_on_Popup_popup_hide"]
+
+[editable path="Pause"]

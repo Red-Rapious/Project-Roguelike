@@ -1,0 +1,78 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://Scenes/Objects/ObjectClassic.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Objects/NPC/ShopKeeper.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Objects/NPC/skeleton1.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Objects/NPC/skeleton2.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Objects/NPC/skeleton3.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Objects/NPC/skeleton4.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Fonts/PressStart2P.ttf" type="DynamicFontData" id=7]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="DynamicFont" id=2]
+size = 8
+font_data = ExtResource( 7 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 8
+font_data = ExtResource( 7 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 8
+font_data = ExtResource( 7 )
+
+[node name="ShopKeeper" index="0" groups=[
+"shop_keeper",
+] instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+
+[node name="Sprite" parent="." index="2"]
+visible = false
+scale = Vector2( 1.5, 1.5 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="." index="3"]
+scale = Vector2( 1.5, 1.5 )
+frames = SubResource( 1 )
+frame = 2
+playing = true
+
+[node name="Label" type="Label" parent="." index="4"]
+visible = false
+modulate = Color( 0.784314, 0.784314, 0.784314, 1 )
+margin_left = -48.0
+margin_top = -24.0
+margin_right = 56.0
+margin_bottom = -8.0
+custom_fonts/font = SubResource( 2 )
+text = "Hi, stranger!"
+
+[node name="ThankYou" type="Label" parent="." index="5"]
+visible = false
+modulate = Color( 0.85098, 0.85098, 0.85098, 1 )
+margin_left = -32.0
+margin_top = -24.0
+margin_right = 48.0
+margin_bottom = -16.0
+custom_fonts/font = SubResource( 3 )
+text = "Thank you!"
+
+[node name="Scam" type="Label" parent="." index="6"]
+visible = false
+margin_left = -56.0
+margin_top = -24.0
+margin_right = 56.0
+margin_bottom = -16.0
+custom_fonts/font = SubResource( 4 )
+text = "Don't scam me!"
+
+[node name="Timer" type="Timer" parent="." index="7"]
+wait_time = 2.0
+one_shot = true
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

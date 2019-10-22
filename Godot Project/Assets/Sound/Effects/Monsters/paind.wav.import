@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/paind.wav-feebc2a87d56b3ae5583b11a9699595b.sample"
+
+[deps]
+
+source_file="res://Assets/Sound/Effects/Monsters/paind.wav"
+dest_files=[ "res://.import/paind.wav-feebc2a87d56b3ae5583b11a9699595b.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

@@ -1,0 +1,33 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Scenes/Objects/ObjectClassic.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Objects/Door/DoorClassic.gd" type="Script" id=2]
+[ext_resource path="res://Scenes/Objects/Door/InteractArea2.gd" type="Script" id=3]
+[ext_resource path="res://Assets/Objects/Door1.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Objects/Door1O.png" type="Texture" id=5]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 16, 4 )
+
+[node name="DoorClassic" index="0" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+
+[node name="CollisionShape2D" parent="InteractArea" index="0"]
+position = Vector2( 0, -12 )
+
+[node name="InteractArea2" type="Area2D" parent="." index="1"]
+script = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractArea2" index="0"]
+position = Vector2( 0, 12 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D" parent="." index="2"]
+disabled = true
+
+[node name="Sprite" parent="." index="3"]
+visible = false
+texture = ExtResource( 4 )
+
+[node name="Sprite2" type="Sprite" parent="." index="4"]
+texture = ExtResource( 5 )

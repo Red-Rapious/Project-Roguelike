@@ -1,0 +1,33 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Scenes/Objects/ObjectClassic.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Objects/WeaponStander.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Objects/WeaponStander2.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Weapons/Knife.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Fonts/PressStart2P.ttf" type="DynamicFontData" id=5]
+
+[sub_resource type="DynamicFont" id=1]
+size = 8
+font_data = ExtResource( 5 )
+
+[node name="WeaponStander" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+
+[node name="Sprite" parent="." index="2"]
+modulate = Color( 0.639216, 0.639216, 0.639216, 1 )
+texture = ExtResource( 3 )
+
+[node name="Weapon" type="Sprite" parent="." index="3"]
+position = Vector2( 0, -2 )
+rotation = 0.785398
+scale = Vector2( 0.75, 0.75 )
+texture = ExtResource( 4 )
+
+[node name="Price" type="Label" parent="." index="4"]
+visible = false
+margin_left = -16.0
+margin_top = -18.0
+margin_right = 16.0
+margin_bottom = -4.0
+custom_fonts/font = SubResource( 1 )
+text = "4 PO"

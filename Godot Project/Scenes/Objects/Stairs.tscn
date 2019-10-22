@@ -1,0 +1,24 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Scenes/Objects/ObjectClassic.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Objects/Stairs.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Objects/Stairs.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Fonts/PressStart2P.ttf" type="DynamicFontData" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 8
+font_data = ExtResource( 4 )
+
+[node name="Stairs" index="0" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+
+[node name="Sprite" parent="." index="2"]
+texture = ExtResource( 3 )
+
+[node name="Label" type="Label" parent="." index="3"]
+margin_left = -25.0
+margin_top = -27.0
+margin_right = 31.0
+margin_bottom = -17.0
+custom_fonts/font = SubResource( 1 )
+text = "Go down"

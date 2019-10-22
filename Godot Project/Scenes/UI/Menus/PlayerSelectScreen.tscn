@@ -1,0 +1,43 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Themes/UITheme.tres" type="Theme" id=1]
+[ext_resource path="res://Scenes/UI/Menus/PlayerSelectScreen.gd" type="Script" id=2]
+[ext_resource path="res://Scenes/UI/Menus/Buttons/PlayerSelectButtons/KnightButton.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/UI/Menus/Buttons/PlayerSelectButtons/ElfButton.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/UI/Menus/Buttons/PlayerSelectButtons/WizardButton.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/UI/Menus/Buttons/PlayerSelectButtons/LizardButton.tscn" type="PackedScene" id=6]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.137255, 0.0784314, 0.101961, 1 )
+
+[node name="PlayerSelectScreen" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 1 )
+script = ExtResource( 2 )
+
+[node name="Panel" type="Panel" parent="."]
+margin_right = 540.0
+margin_bottom = 310.0
+custom_styles/panel = SubResource( 1 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+margin_left = 40.0
+margin_top = 25.0
+margin_right = 500.0
+margin_bottom = 265.0
+custom_constants/separation = 6
+
+[node name="KnightButton" parent="HBoxContainer" instance=ExtResource( 3 )]
+margin_right = 110.0
+
+[node name="ElfButton" parent="HBoxContainer" instance=ExtResource( 4 )]
+margin_left = 116.0
+margin_right = 226.0
+
+[node name="WizardButton" parent="HBoxContainer" instance=ExtResource( 5 )]
+margin_left = 232.0
+margin_right = 342.0
+
+[node name="LizardButton" parent="HBoxContainer" instance=ExtResource( 6 )]
+margin_left = 348.0

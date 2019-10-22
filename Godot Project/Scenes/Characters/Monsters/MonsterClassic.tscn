@@ -1,0 +1,80 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Scenes/Characters/Character.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Characters/Monsters/MonsterClassic.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Characters/Monsters/Medium/Devil.png" type="Texture" id=3]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 9.0
+height = 0.607878
+
+[sub_resource type="Animation" id=2]
+resource_local_to_scene = true
+resource_name = "Hit2"
+length = 0.8
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = false
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 7 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.19 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 0.560784, 0, 0, 1 ), Color( 0.733333, 0, 0, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+length = 0.6
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2 ]
+}
+
+[node name="MonsterClassic" instance=ExtResource( 1 )]
+collision_layer = 4
+script = ExtResource( 2 )
+pvMax = 4
+
+[node name="CollisionShape2D" parent="." index="0"]
+position = Vector2( 6.63769, 18.1914 )
+
+[node name="Sprite" parent="." index="1"]
+texture = ExtResource( 3 )
+hframes = 8
+frame = 7
+
+[node name="AttackHitbox" type="Area2D" parent="." index="2"]
+collision_layer = 4
+collision_mask = 11
+
+[node name="PlayerDetection" type="CollisionShape2D" parent="AttackHitbox" index="0"]
+position = Vector2( 7.1262, 18.697 )
+scale = Vector2( 0.869216, 1.10119 )
+shape = SubResource( 1 )
+
+[node name="AnimationPlayer" parent="." index="3"]
+anims/Hit2 = SubResource( 2 )
+anims/Recover = SubResource( 3 )

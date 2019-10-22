@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Broken_armor.wav-88228e026f4f743b359edeb97abc0a99.sample"
+
+[deps]
+
+source_file="res://Assets/Sound/Effects/Player/Broken_armor.wav"
+dest_files=[ "res://.import/Broken_armor.wav-88228e026f4f743b359edeb97abc0a99.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

@@ -1,0 +1,54 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://Scenes/Objects/Torch/Torch.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Objects/Torch/torch_1.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Objects/Torch/torch_2.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Objects/Torch/torch_3.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Objects/Torch/torch_4.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Objects/Torch/side_torch_1.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Objects/Torch/side_torch_2.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Objects/Torch/side_torch_3.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Objects/Torch/side_torch_4.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Objects/Torch/Light.png" type="Texture" id=10]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[node name="Torch" type="Node2D" groups=[
+"torch",
+]]
+script = ExtResource( 1 )
+side = true
+right_side = true
+
+[node name="Classical" type="AnimatedSprite" parent="."]
+frames = SubResource( 1 )
+frame = 1
+playing = true
+
+[node name="Side" type="AnimatedSprite" parent="."]
+visible = false
+frames = SubResource( 2 )
+frame = 3
+playing = true
+
+[node name="Light2D" type="Light2D" parent="."]
+texture = ExtResource( 10 )
+texture_scale = 2.5
+color = Color( 0.843137, 0.411765, 0.0313726, 1 )
+shadow_gradient_length = 10.0
+shadow_filter = 5
+shadow_filter_smooth = 10.0

@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scenes/OldScenes/Objects/ObjectClassic.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/OldScenes/Objects/WeaponStander.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Objects/WeaponStander.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Weapons/Knife.png" type="Texture" id=4]
+
+
+[node name="WeaponStander" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+
+[node name="Sprite" parent="." index="1"]
+scale = Vector2( 1, 1 )
+texture = ExtResource( 3 )
+
+[node name="Weapon" type="Sprite" parent="." index="2"]
+rotation = 0.785398
+scale = Vector2( 0.81178, 0.81178 )
+texture = ExtResource( 4 )

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Recover_armor.wav-af3fa983cc3c557e844cc534f905205d.sample"
+
+[deps]
+
+source_file="res://Assets/Sound/Effects/Player/Recover_armor.wav"
+dest_files=[ "res://.import/Recover_armor.wav-af3fa983cc3c557e844cc534f905205d.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

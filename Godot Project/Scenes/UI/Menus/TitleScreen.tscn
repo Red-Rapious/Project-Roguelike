@@ -1,0 +1,160 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://Themes/UITheme.tres" type="Theme" id=1]
+[ext_resource path="res://Scenes/UI/Menus/TitleScreen.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Fonts/PressStart2P.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://Scenes/UI/Menus/Buttons/TitleButtons/NewGame.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/UI/Menus/Buttons/TitleButtons/Options.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/UI/Menus/Buttons/TitleButtons/Quit.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Assets/Skull/skull1.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Skull/skull2.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Skull/skull3.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Skull/skull4.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Skull/Buble.png" type="Texture" id=11]
+
+[sub_resource type="DynamicFont" id=1]
+size = 22
+font_data = ExtResource( 3 )
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+} ]
+
+[sub_resource type="DynamicFont" id=3]
+size = 8
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 12
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 12
+font_data = ExtResource( 3 )
+
+[node name="TitleScreen" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 1 )
+script = ExtResource( 2 )
+
+[node name="Panel" type="Panel" parent="."]
+margin_right = 540.0
+margin_bottom = 310.0
+
+[node name="All" type="VBoxContainer" parent="."]
+margin_left = 40.0
+margin_top = 30.0
+margin_right = 500.0
+margin_bottom = 280.0
+
+[node name="Title" type="Label" parent="All"]
+margin_right = 460.0
+margin_bottom = 47.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.654902, 0.509804, 0.509804, 1 )
+custom_colors/font_color_shadow = Color( 0.137255, 0.0784314, 0.109804, 1 )
+text = "Project: Roguelike
+"
+align = 1
+valign = 1
+uppercase = true
+
+[node name="Central" type="HBoxContainer" parent="All"]
+margin_top = 51.0
+margin_right = 460.0
+margin_bottom = 234.0
+size_flags_vertical = 3
+
+[node name="Buttons" type="VBoxContainer" parent="All/Central"]
+margin_right = 228.0
+margin_bottom = 183.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 12
+alignment = 1
+
+[node name="NewGame" parent="All/Central/Buttons" instance=ExtResource( 4 )]
+margin_left = 0.0
+margin_top = 49.0
+margin_right = 228.0
+margin_bottom = 69.0
+text = "New Game"
+nextScene = "UI/Menus/PlayerSelectScreen"
+
+[node name="Options" parent="All/Central/Buttons" instance=ExtResource( 5 )]
+margin_left = 0.0
+margin_top = 81.0
+margin_right = 228.0
+margin_bottom = 101.0
+text = "Test Area"
+nextScene = "OldScenes/Maps/TestArea"
+
+[node name="Quit" parent="All/Central/Buttons" instance=ExtResource( 6 )]
+margin_left = 0.0
+margin_top = 113.0
+margin_right = 228.0
+margin_bottom = 133.0
+text = "Quit game"
+
+[node name="Skull" type="VBoxContainer" parent="All/Central"]
+editor/display_folded = true
+margin_left = 232.0
+margin_right = 460.0
+margin_bottom = 183.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 1
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="All/Central/Skull"]
+visible = false
+position = Vector2( 114.529, 128.082 )
+scale = Vector2( 5.16096, 5.16096 )
+frames = SubResource( 2 )
+animation = "idle"
+frame = 1
+
+[node name="Sprite" type="Sprite" parent="All/Central/Skull"]
+visible = false
+position = Vector2( 123.627, 45.354 )
+scale = Vector2( 3.60545, 2.77951 )
+texture = ExtResource( 11 )
+
+[node name="Label" type="Label" parent="All/Central/Skull/Sprite"]
+visible = false
+margin_left = -34.2888
+margin_top = 14.9832
+margin_right = 193.711
+margin_bottom = 22.9832
+custom_fonts/font = SubResource( 3 )
+text = "Welcome!"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="All"]
+margin_top = 238.0
+margin_right = 460.0
+margin_bottom = 250.0
+size_flags_horizontal = 3
+
+[node name="Version" type="Label" parent="All/HBoxContainer"]
+margin_right = 228.0
+margin_bottom = 12.0
+size_flags_horizontal = 3
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 0.517647, 0.392157, 0.392157, 1 )
+text = "Version 1.0"
+valign = 1
+
+[node name="Copyright" type="Label" parent="All/HBoxContainer"]
+margin_left = 232.0
+margin_right = 460.0
+margin_bottom = 12.0
+size_flags_horizontal = 3
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color = Color( 0.517647, 0.392157, 0.392157, 1 )
+text = "© CC-BY-NC-SA"
+align = 2
+valign = 1

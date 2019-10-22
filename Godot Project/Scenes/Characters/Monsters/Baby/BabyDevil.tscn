@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Scenes/Characters/Monsters/Baby/BabyClassic.tscn" type="PackedScene" id=1]
+
+
+[node name="BabyDevil" index="0" instance=ExtResource( 1 )]

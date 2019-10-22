@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scenes/OldScenes/Objects/ObjectClassic.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/OldScenes/Objects/Door.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Objects/Door2.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Objects/Door2O.png" type="Texture" id=4]
+
+
+[node name="DoorV" index="0" instance=ExtResource( 1 )]
+collision_mask = 15
+script = ExtResource( 2 )
+
+[node name="CollisionShape2D" parent="." index="0"]
+rotation = 1.5708
+
+[node name="Sprite" parent="." index="1"]
+scale = Vector2( 1.0625, 1 )
+texture = ExtResource( 3 )
+
+[node name="Sprite2" type="Sprite" parent="." index="2"]
+visible = false
+texture = ExtResource( 4 )

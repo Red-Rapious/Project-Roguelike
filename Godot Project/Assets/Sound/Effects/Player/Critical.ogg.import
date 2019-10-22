@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Critical.ogg-ea2fd84a7de8fefa945d1dd40323584f.oggstr"
+
+[deps]
+
+source_file="res://Assets/Sound/Effects/Player/Critical.ogg"
+dest_files=[ "res://.import/Critical.ogg-ea2fd84a7de8fefa945d1dd40323584f.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0
