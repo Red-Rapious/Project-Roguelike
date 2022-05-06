@@ -1,6 +1,6 @@
 # Project: Roguelike
-![RedRapious Games](https://img.itch.zone/aW1nLzI0ODQyNzgucG5n/original/AitixQ.png)
-A roguelike game created using Godot Engine during summer.
+![Gameplay](Images/gameplay.png)
+## A roguelike game created using Godot Engine during summer.
 
 Playable on:
 - macOS
